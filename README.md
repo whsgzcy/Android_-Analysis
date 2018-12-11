@@ -171,3 +171,62 @@ public static final class Lifecycle extends SystemService {
 
 API 25的源码相比较API 19来说，通俗易懂；
 
+### Activity Stack 介绍
+Stack意为堆栈，作为Activity的堆栈，主要还是由以下三大部分组成
+
+#### Activity State
+该枚举定义的各种状态和Activity的生命周期有着千丝万缕的关系
+
+```
+代码2.1 (来源:  ActivityStack.java):
+
+enum ActivityState {
+     INITIALIZING,    // 初始化中
+     RESUMED,         // 恢复
+     PAUSING,         // 暂停中
+     PAUSED,          // 已暂停
+     STOPPING,        // 停止中
+     STOPPED,         // 已停止
+     FINISHING,       // 完成中
+     DESTROYING,      // 销毁中
+     DESTROYED        // 已销毁
+}
+```
+
+#### ArrayList
+
+在Activity Stack中定义了一些ArrayList，用来保存特定状态的Activity，比如：
+
+```
+代码2.2 (来源:  ActivityStack.java):
+
+ArrayList<TaskRecord> mTaskHistory；
+ArrayList<TaskGroup> mValidateAppTokens；
+ArrayList<ActivityRecord> mLRUActivities；
+ArrayList<ActivityRecord> mNoAnimActivities；
+ArrayList<ActivityRecord> mStoppingActivities;
+ArrayList<ActivityRecord> mFinishingActivities;
+......
+```
+
+#### 记录在特殊状态下的Activity
+
+```
+代码2.3 (来源:  ActivityStack.java):
+
+ActivityRecord mPausingActivity = null;
+ActivityRecord mLastPausedActivity = null;
+ActivityRecord mLastNoHistoryActivity = null;
+ActivityRecord mResumedActivity = null;
+ActivityRecord mLastStartedActivity = null;
+......
+```
+
+正因为有了这三大部分，AMS即可通过Activity Stack实现了对系统组件的记录，管理以及查询功能；
+
+adb shell dumpsys activity
+
+可查看Activity Stack的信息
+
+
+
