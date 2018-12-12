@@ -1,5 +1,4 @@
 ## 剖析ActivityManagerService
-**参考**[here](https://juejin.im/post/5a055ab45188252ae93a6932).
 
 我们开发Android应用时，少不了要看很多log，无论是借助工具查看，还是adb shell logcat > /*/t.log，总会看到非Application的log，每一行的log都是有他的意义，如果我能够熟悉Android从启动到应用，每一行打印的log，我想，我深入的不仅仅是在Android这一方面，其中解决问题的能力会在各个方面都适用；
 
@@ -233,9 +232,20 @@ Activity Task的数据结构类似堆栈，遵循“先入后出”，它负责�
 
 standard、singleTop、singleTask、singleInstance
 
-其实这四种模式我都用过，启发比较大的是这两张图：
+其实这四种模式我都用过，启发比较大的是这几张图，我师父对我说过，他们底层解决需求就是去设计合适的数据结构，到java层，其实意思很清楚，如果以后遇到类似的需求，我也能够写出来，能写出来不是本事，其实也是把一类功能进行移植，会用不是本事，这才是核心竞争力！
 
-![MacDown logo](http://macdown.uranusjr.com/static/images/logo-160.png)
+![MacDown logo](https://github.com/whsgzcy/Android_-Analysis/blob/master/images/t2.png)
+
+![MacDown logo](https://github.com/whsgzcy/Android_-Analysis/blob/master/images/t3.png)
+
+![MacDown logo](https://github.com/whsgzcy/Android_-Analysis/blob/master/images/t4.png)
+
+![MacDown logo](https://github.com/whsgzcy/Android_-Analysis/blob/master/images/t5.png)
+
+![MacDown logo](https://github.com/whsgzcy/Android_-Analysis/blob/master/images/t6.png)
+
+**参考**[here](https://juejin.im/post/5a055ab45188252ae93a6932).
+
 
 
 
