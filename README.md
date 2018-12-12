@@ -228,5 +228,17 @@ adb shell dumpsys activity
 
 可查看Activity Stack的信息
 
+### Activity Task介绍
+Activity Task的数据结构类似堆栈，遵循“先入后出”，它负责装载执行同一任务的Activity实例集合，Activity的四种launchMode；
+
+standard、singleTop、singleTask、singleInstance
+
+其实这四种模式我都用过，启发比较大的是这两张图：
+
+![MacDown logo](http://macdown.uranusjr.com/static/images/logo-160.png)
+
+
+
+
 
 
