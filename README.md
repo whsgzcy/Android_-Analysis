@@ -242,7 +242,9 @@ standard、singleTop、singleTask、singleInstance
 
 ![MacDown logo](https://github.com/whsgzcy/Android_-Analysis/blob/master/images/t5.png)
 
+
 ![MacDown logo](https://github.com/whsgzcy/Android_-Analysis/blob/master/images/t6.png)
+
 
 **参考**[here](https://juejin.im/post/5a055ab45188252ae93a6932).
 
